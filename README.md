@@ -1,0 +1,1 @@
+# jetson-nano-k3s-setting
