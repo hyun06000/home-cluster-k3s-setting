@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: horovod-train
+spec:
+  parallelism: 2
+  template:
+    spec:
+      containers:
+      - name: horovod-worker
+        image: multi-jetson-training:latest
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+      restartPolicy: OnFailure
